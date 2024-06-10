@@ -1,31 +1,23 @@
-/**
- * ICS3U 7.5 - Events in HTML/JS
- * Mr. J
- *
- * Make sure you read the lesson and watch the in-class demo.
- *
- * Author:
- */
+let score = 0;
+let box = document.getElementById("box");
+let scoreDisplay = document.getElementById("score");
 
-'use strict';
+box.addEventListener("click", points);
+box.addEventListener("click", boxMover);
 
-// Event Listeners and Globals
-document.getElementById("over").addEventListener("mouseover", over)
-document.getElementById("enter").addEventListener("mouseenter", enter)
-document.getElementById("move").addEventListener("mousemove", move)
+function boxMover() {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
 
-let mouseover_count = 0;
-let mouseenter_count = 0;
-let mousemove_count = 0;
+    let randomX = Math.floor(Math.random() * width);
+    let randomY = Math.floor(Math.random() * height);
 
-function over() {
-  document.getElementById("over_span").innerText = ++mouseover_count;
+    box.style.left = randomX + "px";
+    box.style.top = randomY + "px";
 }
+// W3Schools helped me woth this one
 
-function enter() {
-  document.getElementById("enter_span").innerText = ++mouseenter_count;
-}
-
-function move() {
-  document.getElementById("move_span").innerText = ++mousemove_count;
+function points() {
+    score++;
+    scoreDisplay.textContent = "Score: " + score;
 }

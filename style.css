@@ -1,33 +1,23 @@
-html {
-  height: 100%;
-  width: 100%;
+#gameArea {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.footer {
-  margin: 0;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #EEEEEE;
+#box {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+  cursor: pointer;
 }
 
-div.mouse {
-  width: 150px;
-  height: 80px;
-  border: 1px solid black;
-  margin: 10px;
-  float: left;
-  padding: 30px;
-  text-align: center;
-  background-color: lightgray;
-}
-
-div.normal {
-  clear: both;
-}
-
-h3.mouse {
-  background-color: white;
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5em;
 }
